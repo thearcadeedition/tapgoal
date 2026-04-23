@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Basketball Stars</title>
+    <title>Tap Goal</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body style="text-align: center; background-color: #232323; margin: 0; overflow: hidden;">
-    <div id="unity-container" class="unity-desktop">
+    <div id="unity-container">
       <canvas id="unity-canvas" width="960" height="600" style="width: 100%; height: 100%; background: #232323"></canvas>
       <div id="unity-loading-bar" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
-        <div id="unity-logo"><img src="images/logo.png"></div>
-        <div id="unity-progress-bar-empty" style="width: 141px; height: 18px; background: url('images/progress-bar-empty-dark.png') no-repeat center;">
+        <div id="unity-logo"><img src="images/logo.png" style="width: 150px;"></div>
+        <div id="unity-progress-bar-empty" style="width: 141px; height: 18px; background: url('images/progress-bar-empty-dark.png') no-repeat center; margin-top: 10px;">
           <div id="unity-progress-bar-full" style="width: 0%; height: 18px; background: url('images/progress-bar-full-dark.png') no-repeat center;"></div>
         </div>
       </div>
@@ -29,14 +29,14 @@
         codeUrl: "Build/build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Basketball Stars",
-        productVersion: "0.1",
+        productName: "Tap Goal",
+        productVersion: "1.0",
       }, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
         loadingBar.style.display = "none";
       }).catch((message) => {
-        alert(message);
+        console.error(message);
       });
     </script>
   </body>
